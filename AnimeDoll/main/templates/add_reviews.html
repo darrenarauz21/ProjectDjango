@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Nueva Review {% endblock %}
+{% block add_blogs_active %} activo {% endblock add_blogs_active %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<form action="/add_reviews/" enctype="multipart/form-data" method="POST" > {% csrf_token %}
+<div class="container mt-4">
+{{ form.as_p }}
+<button class="btn btn-primary">Nueva Review</button>
+</div>
+</form>
+{% endblock %}
+{% block js %}
+<!--Muestra de mensaje en pantalla-->
+<script>
+   {% if alert %}
+    alert('Su review se agregó con éxito.');
+    document.location = '/';
+    {% endif %}
+</script>
+{% endblock %}
