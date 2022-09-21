@@ -16,7 +16,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{post.title}} <br><small>por {{post.author}}</small></h5>
                   <p class="card-text">{{post.content| truncatechars:210}}</p>
-                  <a href="{{post.slug}}" class="btn btn-primary">Leer más {% if user.is_superuser %}<a href="delete_review_post/{{post.slug}}/" class="btn btn-danger mx-4">Eliminar Review</a>{% endif %}</a>
+                  <a href="/review/{{post.slug}}" class="btn btn-primary">Leer más {% if user.is_superuser %}<a href="delete_review_post/{{post.slug}}/" class="btn btn-danger mx-4">Eliminar Review</a>{% endif %}</a>
                 </div>
               </div>
         </div>
